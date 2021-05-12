@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/echarts.js"></script>
+    <style>
+        div{
+            width: 600px;
+            height: 600px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="chart1"></div>
+    <div id="chart2"></div>
+    <script>
+        //柱状图
+        var myChart1 = echarts.init(document.querySelector("#chart1"));
+        myChart1.setOption({
+            title:{
+                //图表标题
+                text:"柱状图"
+            },
+            xAxis:{
+                data:["IG","RNG","FPX","WE","EDG","SN","RPG"]
+            },
+            yAxis:{
+
+            },
+            //定义图表的类型   柱状图：bar   饼图：pie   通过type属性来定义
+            series:{
+                type:"bar",
+                data:[20,30,10,15,30,60,20] //纯属虚构，本人瞎写
+            }
+        })
+
+        //饼图
+        var myChart2 = echarts.init(document.querySelector("#chart2"));
+        myChart2.setOption({
+            title:{
+                text:"饼图"
+            },
+            series:{
+                type:"pie",
+                data:[
+                    {name:"a",value:15},
+                    {name:"b",value:10},
+                    {name:"c",value:15},
+                    {name:"d",value:25},
+                    {name:"e",value:30},
+                    {name:"f",value:25},
+
+                ]
+            }
+        })
+    </script>
+</body>
+</html>
